@@ -3,9 +3,9 @@
   lang: 'es-ES'
   toc-title: Contenido
   css:
-    - /static/katex.min.css
-    - /static/github.min.css
-    - /static/jall.min.css
+    - ../static/katex.min.css
+    - ../static/github.min.css
+    - ../static/jall.min.css
 ---
 2. Importing and exporting notes ↔️
 

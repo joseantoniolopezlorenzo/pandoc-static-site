@@ -10,7 +10,7 @@
   "author": "jall.profesor@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",

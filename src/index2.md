@@ -1,8 +1,8 @@
 ---
 css:
-  - /static/katex.min.css
-  - /static/github.min.css
-  - /static/jall.min.css
+  - static/katex.min.css
+  - static/github.min.css
+  - static/jall.min.css
 lang: "es-ES"
 title: Página 2
 toc-title: Contenido

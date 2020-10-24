@@ -4,9 +4,9 @@
   lang: 'es-ES'
   toc-title: Índice
   css:
-    - /static/katex.min.css
-    - /static/github.min.css
-    - /static/jall.min.css
+    - static/katex.min.css
+    - static/github.min.css
+    - static/jall.min.css
 ---
 # Notes
 
