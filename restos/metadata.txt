@@ -1,0 +1,5 @@
+---
+pagetitle: Hola mundo
+lang: es
+toc-title: Contenido
+...
