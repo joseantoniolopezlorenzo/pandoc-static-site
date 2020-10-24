@@ -21,7 +21,7 @@ Notes can have some metadata: if they are favorited or not, which tags they have
 
 Some syntax plugins for providing you [otra página](analisis/importing.html), [página 2](index2.html) and [mermaid](https://github.com/knsv/mermaid) support are built-in, check out this note's source.
 
-## KaTeX probando HOLA MUNDO
+## KaTeX
 
 Los productos notables, también llamados igualdades notables, son identidades que nos permiten hacer los cálculos más sencillos.
 
