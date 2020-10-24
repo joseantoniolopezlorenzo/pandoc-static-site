@@ -49,8 +49,8 @@ $C_p[$s:{H2O(l)}$] = 75.3 J / mol K$
 
 s:{CH3CH2OH} $\rightarrow$ s:{NH4+}
 
-## recompilando {.geogebra-container}
-<iframe class="geogebra" scrolling="no" title="curvas de nivel" src="https://www.geogebra.org/material/iframe/id/kwmp7hjh/width/1600/height/790/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"> </iframe>
+## recompilando
+
 
 ## Ejercio:
 
