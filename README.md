@@ -1,1 +1,0 @@
-# pandoc-static-site
