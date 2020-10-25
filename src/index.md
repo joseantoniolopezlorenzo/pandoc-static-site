@@ -17,7 +17,7 @@ This also means that your notes aren't locked into any proprietary format.
 Notes can have some metadata: if they are favorited or not, which tags they have, which attachments they have, etc. These metadata are written as Markdown front matter. This is taken care of for you. Ver [mermaid]
 
 
-## Syntax Plugins {.ejemplo}
+## Syntax Plugins
 
 Some syntax plugins for providing you [otra página](analisis/importing.html), [página 2](index2.html) and [mermaid](https://github.com/knsv/mermaid) support are built-in, check out this note's source.
 
