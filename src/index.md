@@ -10,18 +10,49 @@
 ---
 # Objetivo
 
-## Syntax
+## Desarrollar una web estática.
 
-This also means that your notes aren't locked into any proprietary format.
+Una página web *estática* (a veces llamada página plana o página estacionaria) es una página web que se entrega al navegador del usuario exactamente como está almacenada en el servidor. En la actualidad es díficil desarrollar una web de contenido estático escribiendo en html cada una de las páginas que la conforman. Por lo general se usan **generadores de sitios** escritos en distintos lenguajes de programación que facilitan esa tarea. Se puede ampliar  esta información en [Wikipedia](https://es.wikipedia.org/wiki/P%C3%A1gina_web_est%C3%A1tica). En [este enlace (en inglés)](https://iwantmyname.com/blog/the-updated-big-list-of-static-website-generators-for-your-site-blog-or-wiki)
+se puede consultar un amplio y actualizado listado de generadores de sitios clasificados por lenguajes de programación.
 
-Notes can have some metadata: if they are favorited or not, which tags they have, which attachments they have, etc. These metadata are written as Markdown front matter. This is taken care of for you. Ver [mermaid]
+
+## Escrita en markdown.
+
+En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) se opta, en general, por utilizar **markdown** (extensión *.md*) por su simplicidad y rapidez a la hora de escribir el contenido. Si quiere saber más sobre markdown debería consultar [Wikipedia](https://es.wikipedia.org/wiki/Markdown) o [markdown.es](https://markdown.es/). Existen muchos editores específicos para markdown en su sistema operativo. Además, los principales editores de texto tienen extensiones adaptadas al mismo.
+
+**Markdown** cuenta con unas extensiones opcionales que lo hacen especialmente interesante para escribir casi cualquier tipo de contenido. Algunas de estas son utilizadas en esta web:
+
+- resaltadores de código de programación
+  ```javascript
+    const js = require('mardown');
+  ```
+- el uso de $\LaTeX$ para escribir todo tipo de fórmulas científicas
+  $$e^{iπ} + 1 = 0$$
+- facilitar la escritura de fórmulas químicas:
+    - s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
+    - $C_p[$s:{H2O(l)}$] = 75.3 \frac{J}{mol \cdot K}$
+- dibujar diagramas utilizando texto:
+  ```markdown
+  ```mermaid
+  graph LR;
+  A-->B;
+  A-->C;
+  B-->|One|D;
+  C-->D;
+  style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+  ```
 
 
-## Syntax Plugins
+  ```mermaid
+  graph LR;
+  A-->B;
+  A-->C;
+  B-->|One|D;
+  C-->D;
+  style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+```
 
-Some syntax plugins for providing you [otra página](analisis/importing.html), [página 2](index2.html) and [mermaid](https://github.com/knsv/mermaid) support are built-in, check out this note's source.
-
-## usando KaTeX
+## Compilada en local con 'pandoc'
 
 Los productos notables, también llamados igualdades notables, son identidades que nos permiten hacer los cálculos más sencillos.
 
@@ -38,46 +69,26 @@ Wrap a formula in `$$` to display it as a block:
 
 $$f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi), e^{2 \pi i \xi x} d \xi$$
 
-Wrap it in `$` to display it inline: $e^{iπ} + 1 = 0$.
+Wrap it in `$` to display it inline: .
 
 | The [mhchem](https://docs.moodle.org/36/en/Chemistry_notation_using_mhchem) syntax for writing chemical expressions is supported too:
 s:{CO2} + C $\rightarrow$ 2s:{CO}
 
 s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
 
-$C_p[$s:{H2O(l)}$] = 75.3 J / mol K$
+$
 
 s:{CH3CH2OH} $\rightarrow$ s:{NH4+}
 
-## recompilando
-
-
-## Ejercio:
+## Servido desde GitHub Pages
 
 In order to minimize conflicts there mustn't be spaces at the beginning and end of a formula, and the ending `$` character musn't be followed by a digit. $e^{iπ} + 1 = 0$ If you need to you can escape the `$` character with a backslash.
 
 ## mermaid
 
-```mermaid
-  graph LR;
-  A-->B;
-  A-->C;
-  B-->|One|D;
-  C-->D;
-  style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-```
 
-```mermaid
-sequenceDiagram
-    Alice ->> Bob: Hello Bob, how are you?
-    Bob-->>John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
-    Bob-->Alice: Checking with John...
-    Alice->John: Yes... John, how are you?
-```
+
 
 ## Attachments
 

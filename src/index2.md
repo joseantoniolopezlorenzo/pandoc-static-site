@@ -23,7 +23,17 @@ Sum: $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 Limit: $$\lim_{x\to 0}$$
 
 Sqrt: $$\left(\frac{\sqrt x}{y^3}\right)$$
+```mermaid
+sequenceDiagram
+    Alice ->> Bob: Hello Bob, how are you?
+    Bob-->>John: How about you John?
+    Bob--x Alice: I am good thanks!
+    Bob-x John: I am good thanks!
+    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
 
+    Bob-->Alice: Checking with John...
+    Alice->John: Yes... John, how are you?
+```
 ---
 
 Alternatively you can use https://www.codecogs.com to render expression to image and include it in Markdown.
@@ -65,6 +75,4 @@ MathJax [cheetsheet](https://math.meta.stackexchange.com/questions/5020/mathjax-
 - limits: $\epsilon \varepsilon$
 - vectors and hats: $\hat x, \bar y, \overline{abc}, \vec x$
 
-```javascript
-const js = require('mardown')
-```
+
