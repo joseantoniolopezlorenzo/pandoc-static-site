@@ -1,6 +1,6 @@
 ---
   title: Inicio
-  subtitle: Matemáticas
+  subtitle: Desarrollando una web estática
   lang: 'es-ES'
   toc-title: Índice
   css:
@@ -8,7 +8,7 @@
     - static/github.min.css
     - static/jall.min.css
 ---
-# Notes
+# Objetivo
 
 ## Syntax
 
