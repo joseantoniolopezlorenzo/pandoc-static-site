@@ -8,51 +8,43 @@
     - static/github.min.css
     - static/jall.min.css
 ---
-# Objetivo
+# El proyecto: crear un generador de sitios estáticos.
 
-## Desarrollar una web estática.
+Una página web *estática* (a veces llamada página plana) es una página web que se entrega al navegador del usuario exactamente como está almacenada en el servidor. Se opone a una página web *dinámica*. Se puede ampliar  esta información en [Wikipedia](https://es.wikipedia.org/wiki/P%C3%A1gina_web_est%C3%A1tica).
 
-Una página web *estática* (a veces llamada página plana o página estacionaria) es una página web que se entrega al navegador del usuario exactamente como está almacenada en el servidor. En la actualidad es díficil desarrollar una web de contenido estático escribiendo en html cada una de las páginas que la conforman. Por lo general se usan **generadores de sitios** escritos en distintos lenguajes de programación que facilitan esa tarea. Se puede ampliar  esta información en [Wikipedia](https://es.wikipedia.org/wiki/P%C3%A1gina_web_est%C3%A1tica). En [este enlace (en inglés)](https://iwantmyname.com/blog/the-updated-big-list-of-static-website-generators-for-your-site-blog-or-wiki)
+En la actualidad es tedioso desarrollar una web de contenido estático escribiendo en html cada una de las páginas que la conforman. Por lo general se usan **generadores de sitios estáticos** escritos en distintos lenguajes de programación que facilitan esa tarea.  En [este enlace (en inglés)](https://iwantmyname.com/blog/the-updated-big-list-of-static-website-generators-for-your-site-blog-or-wiki)
 se puede consultar un amplio y actualizado listado de generadores de sitios clasificados por lenguajes de programación.
 
+Aquí no se utilizará ninguno de esos generadores. Crearemos uno desde cero.
 
-## Escrita en markdown.
 
-En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) se opta, en general, por utilizar **markdown** (extensión *.md*) por su simplicidad y rapidez a la hora de escribir el contenido. Si quiere saber más sobre markdown debería consultar [Wikipedia](https://es.wikipedia.org/wiki/Markdown) o [markdown.es](https://markdown.es/). Existen muchos editores específicos para markdown en su sistema operativo. Además, los principales editores de texto tienen extensiones adaptadas al mismo.
+# La web estará escrita en markdown.
 
-**Markdown** cuenta con unas extensiones opcionales que lo hacen especialmente interesante para escribir casi cualquier tipo de contenido. Algunas de estas son utilizadas en esta web:
+En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) se opta, en general, por utilizar **markdown** (extensión *.md*) por su simplicidad y rapidez a la hora de escribir el contenido. Si quiere saber más sobre markdown debería consultar [Wikipedia](https://es.wikipedia.org/wiki/Markdown) o [markdown.es](https://markdown.es/). Existen muchos editores específicos para markdown y, además, los principales editores de texto tienen extensiones adaptadas al mismo.
 
-- resaltadores de código de programación
+**Markdown** cuenta, además, con unas extensiones opcionales que lo hacen especialmente interesante para escribir casi cualquier tipo de contenido. A modo de ejemplo, algunas de estas extensiones nos permiten:
+
+- resaltar de código de programación
   ```javascript
     const js = require('mardown');
   ```
-- el uso de $\LaTeX$ para escribir todo tipo de fórmulas científicas
+- usar $\LaTeX$ para escribir todo tipo de fórmulas científicas
   $$e^{iπ} + 1 = 0$$
 - facilitar la escritura de fórmulas químicas:
     - s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
     - $C_p[$s:{H2O(l)}$] = 75.3 \frac{J}{mol \cdot K}$
 - dibujar diagramas utilizando texto:
-  ```markdown
+
   ```mermaid
-  graph LR;
-  A-->B;
-  A-->C;
-  B-->|One|D;
-  C-->D;
-  style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
+    graph LR;
+    A-->B;
+    A-->C;
+    B-->|One|D;
+    C-->D;
+    style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
   ```
 
-
-  ```mermaid
-  graph LR;
-  A-->B;
-  A-->C;
-  B-->|One|D;
-  C-->D;
-  style D fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5
-```
-
-## Compilada en local con 'pandoc'
+# El núcleo del proyecto: compilación con 'pandoc'
 
 Los productos notables, también llamados igualdades notables, son identidades que nos permiten hacer los cálculos más sencillos.
 
@@ -80,20 +72,6 @@ $
 
 s:{CH3CH2OH} $\rightarrow$ s:{NH4+}
 
-## Servido desde GitHub Pages
+# Servido desde GitHub Pages
 
 In order to minimize conflicts there mustn't be spaces at the beginning and end of a formula, and the ending `$` character musn't be followed by a digit. $e^{iπ} + 1 = 0$ If you need to you can escape the `$` character with a backslash.
-
-## mermaid
-
-
-
-
-
-## Attachments
-
-Notes can have attachments, because sooner or later you'll want to save a file in a note, be it a boarding pass for your next trip or something else.
-
-Attachments can be added by clicking the attachment into in the mainbar's toolbar. Attachments are simply copied into your data directory, under the `attachments` sub-directory.
-
-You can open/remove them at any time.
