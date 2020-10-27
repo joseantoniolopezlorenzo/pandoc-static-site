@@ -45,6 +45,12 @@ gulp.task("minify-css", function() {
     .pipe(gulp.dest("./dist/static"));
 });
 
+gulp.task("cp-images", function() {
+  return gulp
+    .src(["./src/images/*.*"])
+    .pipe(gulp.dest("./dist/images"));
+});
+
 gulp.task("minify-html", function() {
   return gulp
     .src("./dist/**/*.html")
@@ -60,12 +66,13 @@ gulp.task("minify-html", function() {
 
 gulp.task(
   "server",
-  gulp.series("compile-md", "minify-html", "minify-css", function() {
+  gulp.series("compile-md", "minify-html", "minify-css", "cp-images", function() {
     browserSync.init({
       server: "./dist",
     });
     gulp.watch("./src/**/*.md", gulp.series("compile-md", "minify-html"));
     gulp.watch("./src/static/*.css", gulp.series("minify-css"));
+    gulp.watch("./src/images/*.*", gulp.series("cp-images"));
     // gulp.watch("./dist/**/*.html").on("change", reload);
     gulp.watch("./dist/static/*.css").on("change", reload);
   })

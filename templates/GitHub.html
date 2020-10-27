@@ -38,6 +38,7 @@ $if(highlighting-css)$
 $highlighting-css$
   </style>
 $endif$
+<link rel="shortcut icon" href="static/favicon.ico" />
 $--------------------------------------------------------------------------> css
 $for(css)$
   <link rel="stylesheet" href="$css$">
@@ -68,14 +69,11 @@ $---------------------------------------------------------------------> subtitle
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
 $endif$
-$-----------------------------------------------------------------------> author
+$-----------------------------------------------------------------------> author & date
 $for(author)$
-<p class="author">$author$</p>
+<p class="author">$author$ $if(date)$ - $date$ $endif$</p>
 $endfor$
-$-------------------------------------------------------------------------> date
-$if(date)$
-<p class="date">$date$</p>
-$endif$
+
 $----------------------------------------------------------------------> summary
 $if(summary)$
 <div class="summary">

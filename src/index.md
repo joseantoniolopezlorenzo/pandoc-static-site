@@ -1,6 +1,8 @@
 ---
   title: Inicio
-  subtitle: Desarrollando una web estática
+  subtitle: Desarrollo de una web estática
+  date: 26/10/2020
+  author: Jall Profesor
   lang: 'es-ES'
   toc-title: Índice
   css:
@@ -18,11 +20,11 @@ se puede consultar un amplio y actualizado listado de generadores de sitios clas
 Aquí no se utilizará ninguno de esos generadores. Crearemos uno desde cero.
 
 
-# La web estará escrita en markdown.
+# Se usará markdown para escribir el contenido.
 
-En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) se opta, en general, por utilizar **markdown** (extensión *.md*) por su simplicidad y rapidez a la hora de escribir el contenido. Si quiere saber más sobre markdown debería consultar [Wikipedia](https://es.wikipedia.org/wiki/Markdown) o [markdown.es](https://markdown.es/). Existen muchos editores específicos para markdown y, además, los principales editores de texto tienen extensiones adaptadas al mismo.
+En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) podemos utilizar **markdown** (extensión *.md*) por su simplicidad y rapidez a la hora de escribir el contenido. Si quiere saber más sobre markdown debería consultar [Wikipedia](https://es.wikipedia.org/wiki/Markdown) o [markdown.es](https://markdown.es/). Existen muchos editores específicos para markdown y, además, los principales editores de texto tienen extensiones adaptadas al mismo.
 
-**Markdown** cuenta, además, con unas extensiones opcionales que lo hacen especialmente interesante para escribir casi cualquier tipo de contenido. A modo de ejemplo, algunas de estas extensiones nos permiten:
+**Markdown** cuenta con unas extensiones (opcionales) que nos permiten escribir casi cualquier tipo de contenido. A modo de ejemplo, algunas de estas extensiones nos permiten escribir texto plano y...
 
 - resaltar de código de programación
   ```javascript
@@ -45,33 +47,8 @@ En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) se opta
   ```
 
 # El núcleo del proyecto: compilación con 'pandoc'
+![Servidor de desarrollo en acción](images/pandoc-servidor.png)
 
-Los productos notables, también llamados igualdades notables, son identidades que nos permiten hacer los cálculos más sencillos.
-
-<center>
-|    *Productos notables*    |        *Fórmula*        |
-|:-------------------------- |:-----------------------:|
-|    cuadrado de una suma    | $(a+b)^2= a^2+2ab+b^2$  |
-| cuadrado de una diferencia | $(a-b)^2= a^2-2ab+b^2$  |
-|  diferencia de cuadrados   | $a^2 - b^2= (a+b)(a-b)$ |
-</center>
-
-
-Wrap a formula in `$$` to display it as a block:
-
-$$f(x)=\int_{-\infty}^{\infty} \hat{f}(\xi), e^{2 \pi i \xi x} d \xi$$
-
-Wrap it in `$` to display it inline: .
-
-| The [mhchem](https://docs.moodle.org/36/en/Chemistry_notation_using_mhchem) syntax for writing chemical expressions is supported too:
-s:{CO2} + C $\rightarrow$ 2s:{CO}
-
-s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
-
-$
-
-s:{CH3CH2OH} $\rightarrow$ s:{NH4+}
-
-# Servido desde GitHub Pages
+# Web alojada en GitHub Pages
 
 In order to minimize conflicts there mustn't be spaces at the beginning and end of a formula, and the ending `$` character musn't be followed by a digit. $e^{iπ} + 1 = 0$ If you need to you can escape the `$` character with a backslash.
