@@ -21,7 +21,6 @@ gulp.task("compile-md", function() {
     stdout: false,
   };
 
-  if(github === undefined) {github = false}
   function html(file) {
     var parsePath = path.parse(file);
     const distPath = parsePath.dir.replace('src', 'dist');

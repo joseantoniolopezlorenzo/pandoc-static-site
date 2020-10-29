@@ -4,7 +4,7 @@
   "description": "\"sitio estático generado a partir de md\"",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
+    "start": "gulp default --options false",
     "build": "gulp build --options true"
   },
   "author": "jall.profesor@gmail.com",

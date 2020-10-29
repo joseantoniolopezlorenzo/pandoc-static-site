@@ -7,13 +7,14 @@ code {
 .markdown-body {
     padding-top: 0.2rem;
     font-family:  sans-serif,Arial;
+    margin: 0 30px;
 }
 
 /* modificando github.css */
 .markdown-body h1 {
   font-size: 1.7rem;
   border: none;
-  }
+}
 .markdown-body h1.title {
     margin: 1.5rem 0;
     background-color: #ccc;
