@@ -4,11 +4,11 @@
   date: 26/10/2020
   author: Jall Profesor
   lang: 'es-ES'
-  toc-title: Índice
+  toc-title: 'En esta página'
   css:
-    - static/katex.min.css
-    - static/github.min.css
-    - static/jall.min.css
+    - assets/katex.min.css
+    - assets/github.min.css
+    - assets/jall.min.css
 ---
 # El proyecto: crear un generador de sitios estáticos.
 
@@ -36,7 +36,6 @@ En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) podemos
     - s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
     - $C_p[$s:{H2O(l)}$] = 75.3 \frac{J}{mol \cdot K}$
 - dibujar diagramas utilizando texto:
-
   ```mermaid
     graph LR;
     A-->B;
@@ -47,7 +46,10 @@ En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) podemos
   ```
 
 # El núcleo del proyecto: compilación con 'pandoc'
-![Servidor de desarrollo en acción](images/pandoc-servidor.png)
+
+Para convertir los documentos escritos en markdown en páginas web se utiliza la potente herramienta **pandoc**.
+
+![Servidor de desarrollo en acción](assets/images/pandoc-servidor.png)
 
 # Web alojada en GitHub Pages
 

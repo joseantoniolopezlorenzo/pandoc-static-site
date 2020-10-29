@@ -39,16 +39,16 @@ gulp.task("compile-md", function() {
 
 gulp.task("minify-css", function() {
   return gulp
-    .src(["./src/static/*.css"])
+    .src(["./src/assets/*.css"])
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("./dist/static"));
+    .pipe(gulp.dest("./dist/assets"));
 });
 
 gulp.task("cp-images", function() {
   return gulp
-    .src(["./src/images/*.*"])
-    .pipe(gulp.dest("./dist/images"));
+    .src(["./src/assets/images/*.*"])
+    .pipe(gulp.dest("./dist/assets/images"));
 });
 
 gulp.task("minify-html", function() {
@@ -71,10 +71,10 @@ gulp.task(
       server: "./dist",
     });
     gulp.watch("./src/**/*.md", gulp.series("compile-md", "minify-html"));
-    gulp.watch("./src/static/*.css", gulp.series("minify-css"));
-    gulp.watch("./src/images/*.*", gulp.series("cp-images"));
+    gulp.watch("./src/assets/*.css", gulp.series("minify-css"));
+    gulp.watch("./src/assets/images/*.*", gulp.series("cp-images"));
     // gulp.watch("./dist/**/*.html").on("change", reload);
-    gulp.watch("./dist/static/*.css").on("change", reload);
+    gulp.watch("./dist/assets/*.css").on("change", reload);
   })
 );
 

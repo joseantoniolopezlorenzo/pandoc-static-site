@@ -23,6 +23,11 @@ code {
   text-align: right;
   font-weight: bold;
 }
+h1.toc-title{
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+}
 /* header navigator */
 .header_nav ul {
   list-style-type: none;
