@@ -12,8 +12,6 @@ filters:
 template: ./templates/GitHub.html
 include-in-header:
   - templates/header.txt
-include-before-body:
-  - templates/nav.html
 include-after-body:
   - templates/footer.html
 toc: true

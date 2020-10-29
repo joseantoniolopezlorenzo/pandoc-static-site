@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
-    "prod": "gulp produccion",
-    "build": "node build.js"
+    "build": "gulp build --options true"
   },
   "author": "jall.profesor@gmail.com",
   "license": "ISC",

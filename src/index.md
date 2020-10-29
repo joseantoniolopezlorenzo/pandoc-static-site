@@ -47,7 +47,7 @@ En vez de utilizar la farragosa sintaxis del *html* (extensión *.html*) podemos
 
 # El núcleo del proyecto: compilación con 'pandoc'
 
-Para convertir los documentos escritos en markdown en páginas web se utiliza la potente herramienta **pandoc**.
+Para convertir los documentos escritos en markdown en páginas web se utiliza la potente herramienta **pandoc**. Para automatizar las tareas
 
 ![Servidor de desarrollo en acción](assets/images/pandoc-servidor.png)
 
