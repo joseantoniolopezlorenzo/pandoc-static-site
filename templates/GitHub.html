@@ -57,18 +57,19 @@ $-------------------------------------------------------------------------------
 </head>
 <body>
 <article class="markdown-body">
-<header>
-<div class="header_nav">
+   <div class="header_nav">
   <ul>
       <li><a href="$if(github)$/pandoc-static-site$endif$/index.html">Inicio</a></li>
       <li><a href="$if(github)$/pandoc-static-site$endif$/detalles/index.html">Detalles</a></li>
       <li><a href="$if(github)$/pandoc-static-site$endif$/curriculum-vitae.html">CV</a></li>
   </ul>
 </div>
+<header>
 $-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IF: title
 $if(title)$
 <h1 class="title$if(subtitle)$ followed-by-subtitle$endif$">$title$</h1>
 $endif$
+$--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< END IF: title
 $---------------------------------------------------------------------> subtitle
 $if(subtitle)$
 <p class="subtitle">$subtitle$</p>
@@ -77,7 +78,6 @@ $-----------------------------------------------------------------------> author
 $for(author)$
 <p class="author">$author$ $if(date)$ - $date$ $endif$</p>
 $endfor$
-
 $----------------------------------------------------------------------> summary
 $if(summary)$
 <div class="summary">
@@ -86,8 +86,6 @@ $summary$
 $endif$
 $-------------------------------------------------------------------------------
 </header>
-
-$--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< END IF: title
 $--------------------------------------------------------------------------> toc
 $if(toc)$
 <hr>
@@ -99,11 +97,32 @@ $table-of-contents$
 $endif$
 $-------------------------------------------------------------------------> body
 $body$
-$----------------------------------------------------------------> include-after
-$for(include-after)$
-$include-after$
-$endfor$
-$-------------------------------------------------------------------------------
+$--------------------------------------------------------------------------> footer
+<section class="contacto">
+    Contacto
+    <ul class="contacto-container center">
+      <li class="contacto-item">
+        <a href="https://github.com/joseantoniolopezlorenzo">
+          <img src="$if(github)$/pandoc-static-site$endif$/assets/images/github.svg" alt="GitHub" />
+        </a>
+      </li>
+      <li class="contacto-item">
+        <a href="mailto:jall.profesor@gmail.com">
+          <img src="$if(github)$/pandoc-static-site$endif$/assets/images/email.svg" alt="Email contacto" />
+        </a>
+      </li>
+      <li class="contacto-item">
+        <a href="https://twitter.com/JallProfesor">
+          <img src="$if(github)$/pandoc-static-site$endif$/assets/images/twitter.svg" alt="Twitter" />
+        </a>
+      </li>
+      <li class="contacto-item">
+        <a href="https://www.facebook.com/joseantonio.lopezlorenzo.31508">
+          <img src="$if(github)$/pandoc-static-site$endif$/assets/images/facebook.svg" alt="Facebook" />
+        </a>
+      </li>
+    </ul>
+  </section>
 </article>
 </body>
 </html>

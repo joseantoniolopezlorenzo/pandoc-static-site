@@ -2,7 +2,6 @@ from: markdown
 to: html5
 fail-if-warnings: false
 standalone: true
-number-sections: true
 section-divs: true
 eol: lf
 filters:
@@ -12,8 +11,5 @@ filters:
 template: ./templates/GitHub.html
 include-in-header:
   - templates/header.txt
-include-after-body:
-  - templates/footer.html
 toc: true
 toc-depth: 3
-shift-heading-level-by: 0

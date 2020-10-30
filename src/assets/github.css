@@ -221,7 +221,7 @@
 .markdown-body code::after,
 .markdown-body code::before {
   letter-spacing: -0.2em;
-  content: " ";
+  content: "";
 }
 .markdown-body pre > code {
   padding: 0;

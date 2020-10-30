@@ -9,7 +9,7 @@ var browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 const github = process.argv[4];
 
-gulp.task("compile-md", function() {
+gulp.task("compile-md", function () {
   var options = {
     continueOnError: false,
     pipeStdout: true,
@@ -23,7 +23,7 @@ gulp.task("compile-md", function() {
 
   function html(file) {
     var parsePath = path.parse(file);
-    const distPath = parsePath.dir.replace('src', 'dist');
+    const distPath = parsePath.dir.replace("src", "dist");
     return path.join(distPath, parsePath.name) + ".html";
   }
 
@@ -31,14 +31,17 @@ gulp.task("compile-md", function() {
     .src("./src/**/*.md")
     .pipe(
       gulpexec(
-        (file) => `pandoc -d html -M github=${github} -s ${file.path} -o ${html(file.path)}`,
+        (file) =>
+          `pandoc -d html -M github=${github} -s ${file.path} -o ${html(
+            file.path
+          )}`,
         options
       )
     )
     .pipe(gulpexec.reporter(reportOptions));
 });
 
-gulp.task("minify-css", function() {
+gulp.task("minify-css", function () {
   return gulp
     .src(["./src/assets/*.css"])
     .pipe(cleanCSS({ compatibility: "ie8" }))
@@ -46,13 +49,13 @@ gulp.task("minify-css", function() {
     .pipe(gulp.dest("./dist/assets"));
 });
 
-gulp.task("cp-images", function() {
+gulp.task("cp-images", function () {
   return gulp
     .src(["./src/assets/images/*.*"])
     .pipe(gulp.dest("./dist/assets/images"));
 });
 
-gulp.task("minify-html", function() {
+gulp.task("minify-html", function () {
   return gulp
     .src("./dist/**/*.html")
     .pipe(
@@ -67,11 +70,11 @@ gulp.task("minify-html", function() {
 
 gulp.task(
   "server",
-  gulp.series("compile-md", "minify-html", "minify-css", "cp-images", function() {
+  gulp.series("compile-md", "minify-css", "cp-images", function () {
     browserSync.init({
       server: "./dist",
     });
-    gulp.watch("./src/**/*.md", gulp.series("compile-md", "minify-html"));
+    gulp.watch("./src/**/*.md", gulp.series("compile-md"));
     gulp.watch("./src/assets/*.css", gulp.series("minify-css"));
     gulp.watch("./src/assets/images/*.*", gulp.series("cp-images"));
     // gulp.watch("./dist/**/*.html").on("change", reload);
@@ -80,4 +83,4 @@ gulp.task(
 );
 
 gulp.task("default", gulp.series("server"));
-gulp.task("build", gulp.series("compile-md","minify-html"));
+gulp.task("build", gulp.series("compile-md", "minify-html"));
