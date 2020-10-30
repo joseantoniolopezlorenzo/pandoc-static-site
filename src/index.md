@@ -1,6 +1,9 @@
 ---
   title: Inicio
   subtitle: Desarrollo de una web estática
+  title-prefix: Generador de sitio estático con Pandoc
+  description: Explicación general de las herramientas y el flujo de trabajo de un generador de contenido estático
+  keywords: static generator, web estática, pandoc, markdown, gulp, github pages, katex, mermaid
   date: 30/10/2020
   author: Jall Profesor
   lang: 'es-ES'
@@ -61,7 +64,7 @@ Para automatizar la tarea de compilado (desagradable y rutinaria) usaremos **gul
 
 ![Servidor de desarrollo en acción](assets/images/pandoc-servidor.png)
 
- Una explicación detallada del modo de trabajo del proyecto se pueden encontrar en la sección [Detalles](./detalles/index.html) en esta misma web.
+Una explicación detallada del modo de trabajo del proyecto se pueden encontrar en la sección [Detalles](./detalles/index.html) en esta misma web.
 
 # Web alojada en GitHub Pages
 

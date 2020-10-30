@@ -1,6 +1,9 @@
 ---
   title: Detalles
+  title-prefix: Generador de sitio estático con Pandoc
   subtitle: Las herramientas utilizadas en detalle
+  description: Explicación detallada de las herramientas y el flujo de trabajo de este generador de contenido estático
+  keywords: static generator, web estática, pandoc,markdown, gulp, github pages, katex, mermaid
   lang: 'es-ES'
   toc-title: En esta página
   date: 26/10/2020

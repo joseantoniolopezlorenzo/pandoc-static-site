@@ -1,6 +1,9 @@
 ---
 title: Currículum Vitae
 subtitle: A modo de presentación
+title-prefix: Generador de sitio estático con Pandoc
+description: A modo de presentación de Jall Profesor(Vigo)
+keywords: static generator, web estática, pandoc, gulp, github pages, katex, mermaid
 lang: "es-ES"
 toc-title: En esta página
 date: 26/10/2020

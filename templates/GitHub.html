@@ -1,4 +1,5 @@
 $--| GitHub HTML5 Pandoc Template" v2.2 | 2020/08/12 | pandoc v2.1.1
+$--| Adaptación de JallProfesor <jall.profesor@gmail.com> v1.0|2020/10/30
 <!DOCTYPE html>
 $-------------------------------------------------------------------------> lang
 <html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
@@ -26,6 +27,17 @@ $if(description)$
 $endif$
 $------------------------------------------------------------------------> title
   <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+$-----------------------------------------------> SOCIAL MEDIA
+<meta property="og:title" content="$title-prefix$ - $title$">
+<meta property="og:description" content="$description$">
+<meta property="og:image" content="https://joseantoniolopezlorenzo.github.io/pandoc-static-site/assets/images/meta-facebook-image.jpg">
+<meta property="og:url" content="https://joseantoniolopezlorenzo.github.io/pandoc-static-site/">
+<meta name="twitter:image" content="https://joseantoniolopezlorenzo.github.io/pandoc-static-site/assets/images/meta-twitter-image.jpg">
+<meta name="twitter:card" content="https://joseantoniolopezlorenzo.github.io/pandoc-static-site/assets/images/meta-facebook-image.jpg">
+<!--  Non-Essential, But Recommended -->
+<meta property="og:site_name" content="$title-prefix$">
+<meta name="twitter:image:alt" content="$title-prefix$">
+<meta name="twitter:site" content="@JallProfesor">
 $--===========================================================================
 $--                            CSS STYLESHEETS
 $--===========================================================================
