@@ -30,18 +30,18 @@ En vez de utilizar la farragosa sintaxis del _html_ (extensión _.html_) se usar
 
 Hay muy buena documentación al respecto. Existen muchos editores específicos para markdown y, además, los principales editores de texto tienen extensiones o plugins que facilitan su uso.
 
-Un aspecto muy interesante de **Markdown** es que cuenta con unas extensiones (opcionales) que nos permiten escribir casi cualquier tipo de contenido. A modo de ejemplo, algunas de estas extensiones nos permiten escribir texto plano y...
+Un aspecto muy interesante de **Markdown** es que cuenta con unas filtros (opcionales) que nos permiten escribir casi cualquier tipo de contenido. A modo de ejemplo, algunas de estas filtros (extensiones) nos permiten escribir texto plano  con:
 
-- resaltar de código de programación
+- resaltado de código de programación
   ```javascript
   const js = require("mardown");
   ```
-- usar $\LaTeX$ para escribir todo tipo de fórmulas científicas
+- uso de $\LaTeX$ para escribir todo tipo de fórmulas científicas
   $$e^{iπ} + 1 = 0$$
-- facilitar la escritura de fórmulas químicas:
+- facilidad para la escritura de fórmulas químicas:
   - s:{SO4^2-} + s:{Ba^2+} $\rightarrow$ s:{BaSO4}
   - $C_p[$s:{H2O(l)}$] = 75.3 \frac{J}{mol \cdot K}$
-- dibujar diagramas utilizando texto:
+- dibujo diagramas utilizando texto:
   ```mermaid
     graph LR;
     A-->B;

@@ -14,14 +14,74 @@
     - ../assets/jall.min.css
 ---
 
-# En construcción
+# Requisitos.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, ipsum in hendrerit venenatis, felis turpis sodales eros, non luctus purus justo et odio. Nam ac posuere risus, vel interdum augue. Vivamus condimentum quam magna, vel auctor tortor maximus ut. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum egestas ante at eros egestas ornare. Sed et egestas dolor. Duis consectetur velit ex, quis porttitor dolor hendrerit fermentum.
+## Instalación de Pandoc y filtros.
 
-Nulla et volutpat lacus, quis vehicula magna. Fusce viverra, libero eget porta elementum, nisi elit faucibus nibh, sit amet viverra metus orci ac est. Nullam ut libero turpis. Cras commodo risus eu magna blandit, eu gravida eros volutpat. In hac habitasse platea dictumst. Vivamus porttitor elit sit amet lacinia varius. Aliquam tempus diam sit amet leo faucibus, eget posuere turpis blandit. Donec sed auctor velit, eu lobortis diam. Donec et mattis ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet consectetur enim, vitae molestie arcu. Suspendisse potenti. Suspendisse rutrum venenatis mi, vestibulum maximus lectus rhoncus sed. Mauris interdum posuere arcu, at ultrices tellus luctus sed.
+Es preciso tener instalado **Pandoc** en nuestro ordenador de desarrollo. En [esta dirección](https://pandoc.org/installing.html) encontrará instaladores para Windows, macOS, Linux, etc.
 
-Phasellus vel quam quis justo aliquet feugiat sed tristique est. Mauris non hendrerit eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris nec ornare turpis. Suspendisse potenti. Aliquam blandit ut nisi a rutrum. Proin mollis sapien ut lacus rutrum, eget consectetur felis tempor. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+Las extensiones de pandoc que se utilizan en el proyecto son:
 
-Morbi id porta quam. Suspendisse sem nibh, rhoncus tincidunt egestas vel, lobortis pretium ante. Praesent elit lectus, ultricies nec risus non, lobortis fringilla sem. Morbi venenatis eros sapien, in euismod purus rutrum eget. Ut finibus convallis orci, eu consequat eros elementum at. Pellentesque eget condimentum dui. Pellentesque scelerisque eros sed nibh placerat accumsan. Curabitur ornare enim dui. Curabitur varius magna non diam pellentesque, a imperdiet ipsum pellentesque.
+- [pandoc-static-katex](https://pypi.org/project/pandoc_static_katex/): Este filtro que usa $\KaTeX$ para representar ecuaciones matemáticas en el momento de la construcción (*build time*). Hace posible mostrar ecuaciones matemáticas escritas en $\LaTeX$ sin ninguna ejecución de JavaScript en el navegador. El archivo **katex.min.css** se encuentra en */dist/assets/katex.min.css* y las fuentes utilizadas por $\KaTeX$ en */dist/assets/fonts*.
+- [mermaid-filter](https://github.com/raghur/mermaid-filter): Este filtro permite realizar diagramas de secuencia y otros gráficos en archivos markdown.
+- [pandoc-chem-struct](https://github.com/scotthartley/pandoc-chem-struct): es un filtro que convierte estructuras químicas simples en el formato adecuado siendo más fáciles de leer y de escribir.
 
-Nulla eget sagittis urna. Aliquam gravida turpis at ex mattis, nec elementum mauris volutpat. In ornare pretium lorem at laoreet. Cras accumsan risus at posuere consectetur. Duis et venenatis massa, ut ullamcorper turpis. Quisque euismod arcu eget risus imperdiet, ac laoreet nisi vehicula. Curabitur ornare libero facilisis neque ornare, sed scelerisque diam tincidunt. Quisque eleifend enim a risus venenatis, molestie sagittis urna egestas. Aenean quam lorem, sodales eget dui nec, maximus euismod nulla.
+# Elementos
+
+## Plantilla Pandoc.
+
+Una vez cubierto el paso anterior, necesitaremos una **plantilla html5 pandoc**  que permita la traducción a html. Hemos elegido la plantilla **Github** que encontrará en la carpeta */templates/Github.html* y que ha sido convenientemente adaptada. Asimismo, se necesita el correspondiente archivo de estilos que puede encontrar en */src/assets/github.css*. Finalmente, un archivo con los estilos personales */src/assets/jall.css*. Puede encontrar muchas más plantillas [aquí](https://github.com/topics/pandoc-template)
+
+## html.yaml
+
+Necesitamos un archivo **html.yaml** que nos permita configurar la compilación de Pandoc. Lo puede encontrar en */html.yaml* y que consta del siguiente contenido:
+```yaml
+from: markdown
+to: html5
+fail-if-warnings: false
+standalone: true
+section-divs: true
+eol: lf
+filters:
+  - pandoc-static-katex
+  - mermaid-filter
+  - pandoc-chem-struct
+template: ./templates/GitHub.html
+include-in-header:
+  - templates/header.txt
+toc: true
+toc-depth: 3
+
+```
+
+## Archivos markdown y assets.
+
+Se encuentan en la carpeta */src*. Cada archivo *\*.md* será convertido en su correspondiente archivo *\*.html*. Por otro lado, se pueden crear tantas subcarpetas como sean necesarias (este markdown se encuentra, por ejemplo, en */src/detalles/index.md*).
+
+Un elemento importante de los achivos markdown son las cabeceras escritas en markdown que aportan **metainformación** necesaria. Por ejemplo, esta es la cabecera de este archivo:
+
+```yaml
+
+---
+  title: Detalles
+  title-prefix: Generador de sitio estático con Pandoc
+  subtitle: Las herramientas utilizadas en detalle
+  description: Explicación detallada de las herramientas y el flujo de trabajo de este generador de contenido estático
+  keywords: static generator, web estática, pandoc,markdown, gulp, github pages, katex, mermaid
+  lang: 'es-ES'
+  toc-title: En esta página
+  date: 26/10/2020
+  author: Jall Profesor
+  css:
+    - ../assets/katex.min.css
+    - ../assets/github.min.css
+    - ../assets/jall.min.css
+---
+```
+
+Otros campos de metainformación e incluso definir variables se pueden encontrar en el apartado correspondiente de la [documentación](https://pandoc.org/MANUAL.html) de Pandoc.
+
+# Gulp.
+
+
+# Git.
