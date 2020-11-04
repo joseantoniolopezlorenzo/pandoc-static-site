@@ -105,12 +105,13 @@ Otros campos de metadatos predefinidos y opcionales e incluso cómo definir vari
 
 # Gulp.
 
-El proyecto utiliza **Gulp** para dos tareas principales:
+El proyecto utiliza **Gulp** para tres tareas principales:
 
 | Tareas | gulpfile.js|
 |----|----|
 |automatizar la conversión de markdown a html|*gulp.task("**convert-md**")*|
 |pequeño servidor de desarrollo local|*gulp.task("**server**")*|
+|conversión previa a subir a GitHub| *gulp.task("**build**")*|
 
 *gulp.task("convert-md")* (líneas 12 a 39 del *gulpfile.js*) ejecuta **Pandoc** sobre los archivos *.md* la carpeta */src* y mueve los *.html* resultantes a la carpeta */dist*. Esto se realiza con la extensión [**gulp-exec**](https://github.com/robrich/gulp-exec).
 

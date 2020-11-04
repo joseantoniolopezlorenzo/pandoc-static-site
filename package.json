@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp default --options false",
-    "build": "gulp build --options true"
+    "build": "gulp build --options true && ./togithub.sh"
   },
   "author": "jall.profesor@gmail.com",
   "license": "ISC",
