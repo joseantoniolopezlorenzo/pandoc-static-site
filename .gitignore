@@ -44,6 +44,7 @@ jspm_packages/
 restos/
 mermaid-filter.err
 package-lock.json
+prueba.sh
 
 # TypeScript v1 declaration files
 typings/
