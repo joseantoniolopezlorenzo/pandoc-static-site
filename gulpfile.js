@@ -9,7 +9,7 @@ var browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 const github = process.argv[4];
 
-gulp.task("compile-md", function () {
+gulp.task("convert-md", function () {
   var options = {
     continueOnError: false,
     pipeStdout: true,
@@ -31,10 +31,7 @@ gulp.task("compile-md", function () {
     .src("./src/**/*.md")
     .pipe(
       gulpexec(
-        (file) =>
-          `pandoc -d html -M github=${github} -s ${file.path} -o ${html(
-            file.path
-          )}`,
+        (file) =>`pandoc -d html -M github=${github} -s ${file.path} -o ${html(file.path)}`,
         options
       )
     )
@@ -70,11 +67,11 @@ gulp.task("minify-html", function () {
 
 gulp.task(
   "server",
-  gulp.series("compile-md", "minify-css", "cp-images", function () {
+  gulp.series("convert-md", "minify-css", "cp-images", function () {
     browserSync.init({
       server: "./dist",
     });
-    gulp.watch("./src/**/*.md", gulp.series("compile-md"));
+    gulp.watch("./src/**/*.md", gulp.series("convert-md"));
     gulp.watch("./src/assets/*.css", gulp.series("minify-css"));
     gulp.watch("./src/assets/images/*.*", gulp.series("cp-images"));
     // gulp.watch("./dist/**/*.html").on("change", reload);
@@ -83,4 +80,4 @@ gulp.task(
 );
 
 gulp.task("default", gulp.series("server"));
-gulp.task("build", gulp.series("compile-md", "minify-html"));
+gulp.task("build", gulp.series("convert-md", "minify-html"));
