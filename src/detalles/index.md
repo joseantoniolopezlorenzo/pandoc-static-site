@@ -122,7 +122,7 @@ npm start
 ```
 Su salida debería verse similar a esta:
 
-```
+```bash
 > gulp default --options false
 
 [09:10:30] Using gulpfile ~/Proyectos/Pandoc/pandoc-static-site/gulpfile.js
@@ -147,4 +147,29 @@ Su salida debería verse similar a esta:
 ```
 Puede trabajar en elaborar su contenido mientras que el servidor estará observando y esperando cambios; se encargará de actualizar la salida en el navegador cuando detecte cambios en *.md*, *.css* y la carpeta de *images*
 
-# Git.
+# Git y GitHub
+
+Para subir a **GitHub Pages** los cambios efectuados en el proyecto se debe ejecutar el comando:
+
+```bash
+npm run build
+```
+
+que realizará dos acciones:
+
+- la tarea *gulp build* que realizará una conversión con ajuste de las direcciones de los enlaces y comprimirá el código html.
+- lanzará el script *togithub.sh*
+
+El código de *togithub.sh* es:
+
+```bash
+#!/bin/sh
+
+echo 'Introduzca el mensaje para el commit:'
+#leer el dato del teclado y guardarlo en la variable de usuario var1
+read var1
+git add . && git commit -m "${var1}" && git push
+git subtree push --prefix dist origin gh-pages
+```
+
+que preguntará por un mensaje para el *commit* que se va a realizar y seguidamente subirá a GitHub los cambios realizados tanto a nuestro repositorio principal (main) como al repositorio *gh-pages*
