@@ -32,7 +32,7 @@ gulp.task("convert-md", function () {
     .src("./src/**/*.md")
     .pipe(
       gulpexec(
-        (file) =>`pandoc -d html -s ${file.path} -o ${html(file.path)}`,
+        (file) =>`pandoc -d html -M github=${github} -s ${file.path} -o ${html(file.path)}`,
         options
       )
     )
