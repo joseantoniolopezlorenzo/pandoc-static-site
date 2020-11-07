@@ -4,8 +4,8 @@
   "description": "\"sitio estático generado a partir de md\"",
   "main": "index.js",
   "scripts": {
-    "start": "gulp default --options false",
-    "build": "gulp build --options true && ./togithub.sh"
+    "start": "gulp default",
+    "build": "gulp build && ./togithub.sh"
   },
   "author": "jall.profesor@gmail.com",
   "license": "ISC",
