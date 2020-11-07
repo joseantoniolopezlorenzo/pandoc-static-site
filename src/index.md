@@ -62,7 +62,7 @@ Para convertir los documentos escritos en markdown en páginas web se utilizará
 
 Para automatizar la tarea de compilado (desagradable y rutinaria) usaremos **gulp**, que proporciona, además, un servidor web que permite visualizarla mientras se desarrolla.
 
-![Servidor de desarrollo en acción](assets/images/pandoc-servidor.png)
+![Servidor de desarrollo en acción](assets/images/pandoc-servidor.png "Servidor de desarrollo en acción")
 
 Una explicación detallada del modo de trabajo del proyecto se pueden encontrar en la sección [Detalles](./detalles/index.html) en esta misma web.
 
