@@ -149,6 +149,10 @@ Puede trabajar en elaborar su contenido mientras que el servidor estará observa
 
 # Git y GitHub
 
+Un paso previo importante es establecer que la carpeta donde se encuentra las páginas web a servir por **GitHub Pages** es */docs*. Eso se estable en la sección **Settings** de nuestro repositorio.
+
+![Settings del repositorio](../assets/images/githubpages.png)
+
 Para subir a **GitHub Pages** los cambios efectuados en el proyecto se debe ejecutar el comando:
 
 ```bash
