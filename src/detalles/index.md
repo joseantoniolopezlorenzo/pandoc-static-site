@@ -22,7 +22,7 @@ Es preciso tener instalado **Pandoc** en nuestro ordenador de desarrollo. En [es
 
 Las extensiones de pandoc que se utilizan en el proyecto son:
 
-- [pandoc-static-katex](https://pypi.org/project/pandoc_static_katex/): Este filtro que usa $\KaTeX$ para representar ecuaciones matemáticas en el momento de la construcción (*build time*). Hace posible mostrar ecuaciones matemáticas escritas en $\LaTeX$ sin ninguna ejecución de JavaScript en el navegador. El archivo **katex.min.css** se encuentra en */dist/assets/katex.min.css* y las fuentes utilizadas por $\KaTeX$ en */dist/assets/fonts*.
+- [pandoc-static-katex](https://pypi.org/project/pandoc_static_katex/): Este filtro que usa $\KaTeX$ para representar ecuaciones matemáticas en el momento de la construcción (*build time*). Hace posible mostrar ecuaciones matemáticas escritas en $\LaTeX$ sin ninguna ejecución de JavaScript en el navegador. El archivo **katex.min.css** se encuentra en */docs/assets/katex.min.css* y las fuentes utilizadas por $\KaTeX$ en */docs/assets/fonts*.
 - [mermaid-filter](https://github.com/raghur/mermaid-filter): Este filtro permite realizar diagramas de secuencia y otros gráficos en archivos markdown.
 - [pandoc-chem-struct](https://github.com/scotthartley/pandoc-chem-struct): es un filtro que convierte estructuras químicas simples en el formato adecuado siendo más fáciles de leer y de escribir.
 
@@ -63,7 +63,7 @@ toc-depth: 3
 
 ## Archivos markdown y assets.
 
-Se encuentan en la carpeta */src*. Cada archivo *\*.md* será convertido en su correspondiente archivo *\*.html*. Por otro lado, se pueden crear tantas subcarpetas como sean necesarias (este markdown se encuentra, por ejemplo, en */src/detalles/index.md*). La carpeta assets será copiada a */dist* después de un minimizado de los archivos *css*.
+Se encuentan en la carpeta */src*. Cada archivo *\*.md* será convertido en su correspondiente archivo *\*.html*. Por otro lado, se pueden crear tantas subcarpetas como sean necesarias (este markdown se encuentra, por ejemplo, en */src/detalles/index.md*). La carpeta assets será copiada a */docs* después de un minimizado de los archivos *css*.
 
 Un elemento importante de los achivos markdown son las cabeceras escritas en yaml que aportan **metadatos** específicos de cada archivo a la hora de la conversión en páginas web. Por ejemplo, la cabecera del archivo correspondiente a esta página web es:
 
@@ -113,7 +113,7 @@ El proyecto utiliza **Gulp** para tres tareas principales:
 |pequeño servidor de desarrollo local|*gulp.task("**server**")*|
 |conversión previa a subir a GitHub| *gulp.task("**build**")*|
 
-*gulp.task("convert-md")* (líneas 12 a 39 del *gulpfile.js*) ejecuta **Pandoc** sobre los archivos *.md* la carpeta */src* y mueve los *.html* resultantes a la carpeta */dist*. Esto se realiza con la extensión [**gulp-exec**](https://github.com/robrich/gulp-exec).
+*gulp.task("convert-md")* (líneas 12 a 39 del *gulpfile.js*) ejecuta **Pandoc** sobre los archivos *.md* la carpeta */src* y mueve los *.html* resultantes a la carpeta */docs*. Esto se realiza con la extensión [**gulp-exec**](https://github.com/robrich/gulp-exec).
 
 Para lanzar el servidor de desarrollo ejecute:
 
@@ -143,7 +143,7 @@ Su salida debería verse similar a esta:
           UI: http://localhost:3001
  UI External: http://localhost:3001
  -----------------------------------
-[Browsersync] Serving files from: ./dist
+[Browsersync] Serving files from: ./docs
 ```
 Puede trabajar en elaborar su contenido mientras que el servidor estará observando y esperando cambios; se encargará de actualizar la salida en el navegador cuando detecte cambios en *.md*, *.css* y la carpeta de *images*
 
@@ -169,7 +169,6 @@ echo 'Introduzca el mensaje para el commit:'
 #leer el dato del teclado y guardarlo en la variable de usuario var1
 read var1
 git add . && git commit -m "${var1}" && git push
-git subtree push --prefix dist origin gh-pages
 ```
 
-que preguntará por un mensaje para el *commit* que se va a realizar y seguidamente subirá a GitHub los cambios realizados tanto a nuestro repositorio principal (main) como al repositorio *gh-pages*
+que preguntará por un mensaje para el *commit* que se va a realizar y seguidamente subirá a GitHub los cambios realizados a nuestro repositorio principal (main).
