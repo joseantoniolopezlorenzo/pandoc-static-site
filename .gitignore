@@ -44,6 +44,8 @@ jspm_packages/
 restos/
 mermaid-filter.err
 package-lock.json
+*.sublime-project
+*.sublime-workspace
 
 # TypeScript v1 declaration files
 typings/
